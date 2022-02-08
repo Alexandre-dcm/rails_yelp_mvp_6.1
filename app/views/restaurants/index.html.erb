@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All restaurants</title>
+</head>
+<body>
+  <h1>All restaurants</h1>
+
+  <% @restaurants.each do |resto| %>
+    <div class="restaurant">
+      <h3><%= resto.name %></h3>
+      <h4><%= resto.address %></h4>
+      <h4><%= resto.category %></h4>
+      <%= link_to "See details", restaurant_path(resto), class: "btn btn-primary"%>
+    </div>
+  <% end %>
+
+  <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary"%>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @restaurant.name %></title>
+</head>
+<body>
+  <h1>Restaurant :<%= @restaurant.name %></h1>
+
+  <div>
+    <h2>Category :</h2>
+    <p><%= @restaurant.category %></p>
+  </div>
+
+  <div>
+    <h2>Address :</h2>
+    <p><%= @restaurant.address %></p>
+  </div>
+
+  <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+
+  <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>
+</body>
+</html>
